@@ -52,6 +52,7 @@ File	                                        Description
 ```
 
 🔁 How It Works
+```bash
 Watches a specified directory (WATCH_DIR) for DICOM files.
 
 Skips previously uploaded or invalid files using log files.
@@ -65,9 +66,10 @@ Uploads run in batches (BATCH_SIZE) with limited concurrency (MAX_CONCURRENT_JOB
 System load is monitored; uploads pause if load is too high.
 
 Results are logged for auditing and future runs.
-
+```
 
 🧠 Logic Summary
+```bash
 Uploads only new, valid, unlogged DICOM files.
 
 Uploads are concurrent but controlled.
@@ -75,9 +77,10 @@ Uploads are concurrent but controlled.
 Progress and state are persisted across reboots.
 
 Automatically skips duplicate or invalid files.
-
+```
 
 📌 Notes
+```bash
 Requires dcmtk tools for validation and sending DICOM files.
 
 Recommended to mount your image source (e.g., /YOUR SOURCE DIR) on boot.
@@ -85,9 +88,11 @@ Recommended to mount your image source (e.g., /YOUR SOURCE DIR) on boot.
 Tweak BATCH_SIZE or MAX_CONCURRENT_JOBS for performance tuning.
 
 Script is safe to restart — it tracks previously uploaded files persistently.
-
+```
 
 👨‍💻 Maintainer
+```bash
 This script was written and is maintained by a system administrator working with medical imaging systems and PACS infrastructure and also ChatGPT.
 
 Feel free to open issues or contribute!
+```
